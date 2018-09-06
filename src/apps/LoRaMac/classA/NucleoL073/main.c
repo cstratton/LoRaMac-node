@@ -537,7 +537,7 @@ static void McpsConfirm( McpsConfirm_t *mcpsConfirm )
     mibGet.Type  = MIB_CHANNELS;
     if( LoRaMacMibGetRequestConfirm( &mibGet ) == LORAMAC_STATUS_OK )
     {
-        printf( "U/L FREQ    : %lu\r\n", mibGet.Param.ChannelList[mcpsConfirm->Channel].Frequency );
+      printf( "U/L CHAN    : %lu = %lu\r\n", mcpsConfirm->Channel, mibGet.Param.ChannelList[mcpsConfirm->Channel].Frequency );
     }
 
     printf( "TX POWER    : %d\r\n", mcpsConfirm->TxPower );
